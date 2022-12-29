@@ -2,15 +2,19 @@ import re
 
 f = open("input4a.txt",'r')
 
+# '8' < '12'
+
 count=0
 for line in f:
 
     firstLine = line.strip()
     allItems = re.split(r'-|,', firstLine)
-    print(allItems)
+    allItems = list(map(int, allItems))
     # we can assume exactly 4 items in this problem
     
-    if ((allItems[3]>=allItems[0]>=allItems[2]) and (allItems[2]<=allItems[1]<=allItems[3])) or ((allItems[0]<=allItems[2]<=allItems[1]) and (allItems[0]<=allItems[3]<=allItems[1])):
+    # 0 1 2 3
+    # 2 <= 0 <= 3 and  2 <= 1 <= 3   or 0<=2<=1 and 0<=3<=1
+    if ((allItems[2]<=allItems[0]<=allItems[3]) and (allItems[2]<=allItems[1]<=allItems[3])) or ((allItems[0]<=allItems[2]<=allItems[1]) and (allItems[0]<=allItems[3]<=allItems[1])):
         print("Inrange")
        
         count=count+1
