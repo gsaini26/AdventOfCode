@@ -8,6 +8,7 @@ for line in f:
     # remove the new line
     firstLine = line.strip()
     # if hit a blank line, skip it
+    print(firstLine)
     if firstLine == '':
         continue
     elif firstLine[0] == 'm':
@@ -18,8 +19,12 @@ for line in f:
         moveItems = list(map(int, moveItems))
         print("move items", moveItems)
     elif firstLine!='' and firstLine[0] != 'm' and firstLine[0] != '1':
-        allItems = re.findall(r"\w", firstLine)
+        #allItems = re.search(r"\w", firstLine)
+        allItems = re.sub(r"[\]", "", firstLine)
+
         # NEED TO ADD or append allItems to a list of lists. Is there a prepend or does it have to be append?
+        
+        
         print(allItems)
         # append the line read in to a list of lists
     

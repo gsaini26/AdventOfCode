@@ -1,5 +1,5 @@
 [P]     [C]         [M]            
-[D]     [P] [B]     [V] [S]        
+[D]     [P] [B]     [V] [S]     [A]   
  1   2   3   4   5   6   7   8   9
 
 move 1 from 9 to 7
